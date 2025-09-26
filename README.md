@@ -79,6 +79,8 @@ This project uses NASA’s **DONKI API**.
 - **Week 8, Day 4:** Final Testing & Deployment (UI polish, deployment, GitHub cleanup)  
 - **Week 8, Day 5:** Demo Day 🎉  
 
+For detailed daily progress, see [Progress Log](progress.md)
+
 ---
 
 ## 🙌 Acknowledgments  
