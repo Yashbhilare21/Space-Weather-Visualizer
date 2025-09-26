@@ -57,7 +57,7 @@ This project uses NASA’s **DONKI API**.
 
 ## 🌍 Live Demo  
 
-👉 [View Deployed App](https://your-app-link.streamlit.app)  
+👉 [View Deployed App]([https://your-app-link.streamlit.app](https://space-weather-visualizer-agnirva.streamlit.app/))  
 
 ---
 
