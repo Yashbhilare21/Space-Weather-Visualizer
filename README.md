@@ -1,7 +1,7 @@
-# 🚀 Agnirva Space Weather Visualizer  
-
 ![Agnirva Logo](https://static.wixstatic.com/media/7c3283_f89828d7d13b4103b26b4d3750ec9953~mv2.png/v1/fill/w_1368,h_504,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/7c3283_f89828d7d13b4103b26b4d3750ec9953~mv2.png)  
 
+
+# 🚀 Agnirva Space Weather Visualizer  
 
 > A Streamlit-based dashboard that visualizes NASA’s **space weather data** including Solar Flares (FLR), Coronal Mass Ejections (CME), and Geomagnetic Storms (GST).  
 > Built as part of the **Agnirva Internship Capstone Project**.  
