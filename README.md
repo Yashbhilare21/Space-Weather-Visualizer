@@ -64,7 +64,7 @@ This project uses NASA’s **DONKI API**.
 ## 📸 Screenshots  
 
 ### Dashboard Home  
-![Dashboard]([screenshots/home.png](https://github.com/Yashbhilare21/Space-Weather-Visualizer/blob/main/screenshots/Charts.png))  
+![Dashboard](screenshots/Charts.png)
 
 ### Event Frequency Chart  
 ![Chart](screenshots/chart.png)  
