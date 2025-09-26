@@ -1,0 +1,129 @@
+/* style.css - Modern Space-Themed UI */
+
+:root {
+  --background-primary: #1e293b; /* Deep slate blue */
+  --background-secondary: #0f172a; /* Darker navy for sections/cards */
+  --text-primary: #f8fafc; /* Near-white */
+  --text-secondary: #94a3b8; /* Slate gray */
+  --accent-blue: #38bdf8; /* Sky blue for primary actions/titles */
+  --accent-red: #f87171; /* Soft red for warnings/errors */
+  --border-color: #334155;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 30px;
+  background: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--accent-blue);
+  font-size: 2.5em;
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: var(--text-primary);
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Layout and Sections --- */
+section {
+  background: var(--background-secondary);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  transition: transform 0.2s;
+}
+
+section:hover {
+    /* Subtle lift effect on hover */
+    transform: translateY(-2px);
+}
+
+/* --- Inputs and Buttons --- */
+button {
+  padding: 10px 18px;
+  background: var(--accent-blue);
+  color: var(--background-secondary); /* Dark text on light blue button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: #0ea5e9; /* Slightly darker blue */
+  transform: translateY(-1px);
+}
+
+input[type="text"] {
+  padding: 10px;
+  background: var(--background-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  width: 300px;
+  max-width: 100%;
+  margin-right: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.5);
+}
+
+/* --- Data Display --- */
+pre {
+  background: #080d19; /* Very dark background for code/JSON */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  white-space: pre-wrap; /* Ensures long lines wrap */
+}
+
+/* --- Search Results List --- */
+#searchResults {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#searchResults li {
+  background: var(--background-primary);
+  border-left: 3px solid var(--accent-blue);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  transition: background 0.2s, border-left-color 0.2s;
+}
+
+#searchResults li:hover {
+  background: #253147;
+  border-left-color: #0ea5e9;
+  color: var(--text-primary);
+}
+
+/* --- Chart Canvas Styling --- */
+#myChart {
+    background: var(--background-primary);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}

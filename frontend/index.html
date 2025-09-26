@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agnirva Space Weather Dashboard</title>
+  <link rel="stylesheet" href="../static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>☀️ Agnirva Space Weather Dashboard</h1>
+
+  <section>
+    <h2>🔎 Search Events</h2>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <input type="text" id="searchBar" placeholder="Search events by name or date..." />
+    </div>
+    <ul id="searchResults"></ul>
+  </section>
+
+  <section>
+    <h2>🌌 NASA Space Weather Feed</h2>
+    <button onclick="fetchWeather()">🚀 Fetch Latest Data</button>
+    <pre id="weatherOutput"></pre>
+  </section>
+
+  <section>
+    <h2>📊 Solar Events Chart</h2>
+    <canvas id="myChart"></canvas>
+  </section>
+
+  <section>
+    <h2>🛒 Checkout Simulation (Example API Endpoint)</h2>
+    <button onclick="checkout()">💳 Checkout Cart</button>
+  </section>
+
+  <script>
+    // [Your existing JavaScript functions remain here, no changes needed]
+
+    // ---------- Checkout ----------
+    function checkout() {
+      const cart = [{ id: 1, name: "Space Helmet", price: 99 }];
+      const total = cart.reduce((t, i) => t + i.price, 0);
+
+      fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart, total })
+      })
+        .then(res => res.json())
+        .then(data => alert(`✅ ${data.message}. Order ID: ${data.order_id}`))
+        .catch(err => console.error("Checkout error:", err));
+    }
+
+    // ---------- NASA Space Weather ----------
+    function fetchWeather() {
+      fetch("/api/space-weather")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("weatherOutput").textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(err => console.error("Weather fetch error:", err));
+    }
+
+    // ---------- Search ----------
+    document.getElementById("searchBar").addEventListener("input", e => {
+      const q = e.target.value;
+      fetch(`/api/search?q=${q}`)
+        .then(res => res.json())
+        .then(results => {
+          const ul = document.getElementById("searchResults");
+          ul.innerHTML = "";
+          results.forEach(r => {
+            const li = document.createElement("li");
+            li.textContent = `${r.name} (${r.date})`;
+            ul.appendChild(li);
+          });
+        });
+    });
+
+    // ---------- Chart.js Example ----------
+    const ctx = document.getElementById("myChart").getContext("2d");
+    const myChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Solar Flares", "Storms", "CME"],
+        datasets: [{
+          label: "Events Count",
+          data: [5, 2, 3],
+          backgroundColor: ["#ff6384", "#36a2eb", "#ffce56"]
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>
