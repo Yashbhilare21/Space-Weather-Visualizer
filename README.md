@@ -67,7 +67,7 @@ This project uses NASA’s **DONKI API**.
 ![Dashboard](screenshots/Dashboard UI.png)
 
 ### Event Frequency Chart  
-![Chart](screenshots/Chart.png)  
+![Chart](screenshots/Charts.png)
 
 ---
 
